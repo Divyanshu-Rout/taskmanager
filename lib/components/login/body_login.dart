@@ -7,6 +7,8 @@ import 'package:taskmanager/components/login/password_field.dart';
 import 'package:taskmanager/components/login/rounded_input_field.dart';
 import 'package:taskmanager/constants/theme_constant.dart';
 
+import '../../constants/routes.dart';
+
 class Body extends StatelessWidget {
   const Body({
     Key? key,
@@ -49,7 +51,12 @@ class Body extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          AlreadyHaveAnAccountCheck(press: () {}),
+          AlreadyHaveAnAccountCheck(
+            press: () {
+              Navigator.of(context)
+                  .pushNamedAndRemoveUntil((signupRoute), (route) => false);
+            },
+          ),
         ],
       ),
     );
