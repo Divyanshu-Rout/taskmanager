@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:taskmanager/components/generic/rounded_button.dart';
-import 'package:taskmanager/components/welcome/background.dart';
-import 'package:taskmanager/constants/routes.dart';
+import 'package:taskmanager/components/login/already_have_an_account_check.dart';
+import 'package:taskmanager/components/login/background_login.dart';
+import 'package:taskmanager/components/login/password_field.dart';
+import 'package:taskmanager/components/login/rounded_input_field.dart';
 import 'package:taskmanager/constants/theme_constant.dart';
 
 class Body extends StatelessWidget {
-  const Body({Key? key}) : super(key: key);
+  const Body({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,40 +20,36 @@ class Body extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           const Text(
-            'WELCOME TO TASK MANAGER',
+            'LOGIN',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 18,
             ),
           ),
           const SizedBox(
-            height: 20,
+            height: 25,
           ),
-          SvgPicture.asset(
-            'assets/icons/chat.svg',
-            height: size.height * 0.4,
+          SvgPicture.asset('assets/icons/login.svg', width: size.height * 0.3),
+          RoundedInputFeild(
+            hintText: 'your email',
+            onChanged: (value) {},
+          ),
+          RoundedPasswordField(
+            onChanged: (value) {},
           ),
           const SizedBox(
-            height: 40,
+            height: 16,
           ),
           RoundedButton(
             text: "LOGIN",
             color: kPrimaryColor,
             textColor: Colors.white,
-            press: () {
-              Navigator.of(context)
-                  .pushNamedAndRemoveUntil((loginRoute), (route) => false);
-            },
+            press: () {},
           ),
           const SizedBox(
             height: 10,
           ),
-          RoundedButton(
-            text: "SIGNUP",
-            color: kPrimaryLightColor,
-            textColor: Colors.black,
-            press: () {},
-          ),
+          AlreadyHaveAnAccountCheck(press: () {}),
         ],
       ),
     );

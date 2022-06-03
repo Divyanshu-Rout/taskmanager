@@ -18,17 +18,25 @@ class RoundedButton extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return TextButton(
       style: TextButton.styleFrom(
-          padding: const EdgeInsets.symmetric(
-            vertical: 16,
-            horizontal: 80,
+        padding: const EdgeInsets.symmetric(
+          vertical: 16,
+          horizontal: 80,
+        ),
+        minimumSize: Size(
+          size.width * 0.8,
+          56,
+        ),
+        primary: textColor,
+        backgroundColor: color,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(50),
           ),
-          minimumSize: Size(size.width * 0.6, 36),
-          primary: textColor,
-          backgroundColor: color,
-          shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(50)),
-          )),
-      onPressed: () {},
+        ),
+      ),
+      onPressed: () {
+        press();
+      },
       child: Text(text),
     );
   }
