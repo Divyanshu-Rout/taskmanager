@@ -21,7 +21,7 @@ class SignUpView extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const Text(
-                'Sign Up',
+                'SIGN UP',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 18,
@@ -35,7 +35,7 @@ class SignUpView extends StatelessWidget {
                 width: size.height * 0.25,
               ),
               const SizedBox(
-                height: 30,
+                height: 20,
               ),
               RoundedInputFeild(
                 hintText: 'your email',
@@ -45,7 +45,7 @@ class SignUpView extends StatelessWidget {
                 onChanged: (value) {},
               ),
               const SizedBox(
-                height: 16,
+                height: 13,
               ),
               RoundedButton(
                 text: "SIGN UP",
